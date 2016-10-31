@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <h3 class="title">All Reviews</h3>
+  <div class="collection">
+      {% for book in object_list %}
+          Name:
+          {% for review in book.review_set.all %}
+              {{ review.review }}
+          {% empty %}
+             None
+          {% endfor %}
+      {% endfor %}
+{% endblock %}

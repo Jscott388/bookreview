@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <h3 class="title">All Books</h3>
+  <div class="collection">
+    {% for book in books %}
+        <a class="collection-item" href="{% url 'book-detail' book.id %}">{{book.title}}</a>
+    {% endfor %}
+  </div>
+  <a class="btn right" href="{% url 'book-create' %}">Create Book</a>
+{% endblock %}
